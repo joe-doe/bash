@@ -9,5 +9,5 @@ echo "------- ----------------"
 
 for port in "${ports[@]}"
 do
-  lsof -i:${port} | awk '{if (NR!=1) {print $1}}'
+  sudo lsof -i:${port} | awk '{if (NR!=1) {print $1}}'
 done | sort | uniq -c
